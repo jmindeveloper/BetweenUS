@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class RoginViewModel {
+class RoginViewModel {
     
     // MARK: - Properties
     @Published var email = ""
@@ -17,36 +17,33 @@ final class RoginViewModel {
     let emailValidSubject = CurrentValueSubject<Bool, Never>(false)
     let passwordValidSubject = CurrentValueSubject<Bool, Never>(false)
     let checkPasswordValidSubject = CurrentValueSubject<Bool, Never>(false)
-    private let authManager = AuthManager()
+    let authManager = AuthManager.shared
     
     // MARK: - Method
-    private func emailValid() -> AnyPublisher<Bool, Never> {
+    func emailValid() -> AnyPublisher<Bool, Never> {
         $email
-            .map { [weak self] email -> Bool in
-                if email.contains("@"), email.contains(".") {
-                    self?.emailValidSubject.send(true)
-                    return true
-                } else {
-                    self?.emailValidSubject.send(false)
-                    return false
-                }
-            }.eraseToAnyPublisher()
+            .map { [weak self] in
+                guard let self = self else { return false }
+                let valid = self.validateEmail(email: $0)
+                self.emailValidSubject.send(valid)
+                
+                return valid
+            }
+            .eraseToAnyPublisher()
     }
     
-    private func passwordValid() -> AnyPublisher<Bool, Never> {
+    func passwordValid() -> AnyPublisher<Bool, Never> {
         $password
-            .map { [weak self] password -> Bool in
-                if password.count >= 7 {
-                    self?.passwordValidSubject.send(true)
-                    return true
-                } else {
-                    self?.passwordValidSubject.send(false)
-                    return false
-                }
+            .map { [weak self] in
+                guard let self = self else { return false }
+                let valid = self.validatePassword(password: $0)
+                self.passwordValidSubject.send(valid)
+                
+                return valid
             }.eraseToAnyPublisher()
     }
     
-    private func checkPasswordValid() -> AnyPublisher<Bool, Never> {
+    func checkPasswordValid() -> AnyPublisher<Bool, Never> {
         $checkPassword
             .map { [weak self] checkPassword -> Bool in
                 if self?.password == checkPassword {
@@ -59,36 +56,18 @@ final class RoginViewModel {
             }.eraseToAnyPublisher()
     }
     
-    func isValidSignIn() -> AnyPublisher<Bool, Never> {
-        emailValid()
-            .combineLatest(passwordValid())
-            .map {
-                if $0.0, $0.1 {
-                    return true
-                } else {
-                    return false
-                }
-            }.eraseToAnyPublisher()
+    private func validateEmail(email: String) -> Bool {
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailCondition = NSPredicate(format: "SELF MATCHES %@", regex)
+        
+        return emailCondition.evaluate(with: email)
     }
     
-    func isValidSignUp() -> AnyPublisher<Bool, Never> {
-        emailValid()
-            .combineLatest(passwordValid(), checkPasswordValid())
-            .map {
-                if $0.0, $0.1, $0.2 {
-                    return true
-                } else {
-                    return false
-                }
-            }.eraseToAnyPublisher()
-    }
-    
-    func signIn() {
-        print("email: \(email), password: \(password)")
-        authManager.signIn(email: email, password: password)
-    }
-    
-    func signUp() {
-        authManager.signUp(email: email, password: password)
+    private func validatePassword(password: String) -> Bool {
+        let regex = "^(?=.*[A-Za-z])(?=.*[0-9]).{7,50}"
+        let passwordCondition = NSPredicate(format: "SELF MATCHES %@", regex)
+        
+        let valid = passwordCondition.evaluate(with: password)
+        return valid
     }
 }

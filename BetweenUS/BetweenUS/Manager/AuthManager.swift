@@ -10,6 +10,11 @@ import FirebaseCore
 import FirebaseAuth
 
 final class AuthManager {
+    
+    static let shared = AuthManager()
+    
+    private init() { }
+    
     let handler = Auth.auth().addStateDidChangeListener { auth, user in
         print("auth: ", auth, "user: ", user?.uid)
     }

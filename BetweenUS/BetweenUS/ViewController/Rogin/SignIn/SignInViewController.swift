@@ -15,7 +15,7 @@ final class SignInViewController: UIViewController {
     // MARK: - ViewProperties
     private let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "email"
+        textField.placeholder = "이메일"
         textField.borderStyle = .roundedRect
         
         return textField
@@ -33,7 +33,7 @@ final class SignInViewController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password"
+        textField.placeholder = "비밀번호"
         textField.borderStyle = .roundedRect
         
         return textField
@@ -85,7 +85,7 @@ final class SignInViewController: UIViewController {
     }()
     
     // MARK: - Properties
-    private let viewModel = RoginViewModel()
+    private let viewModel = SignInViewModel()
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - LifeCycle
@@ -107,6 +107,14 @@ final class SignInViewController: UIViewController {
         SignUpButton.layer.cornerRadius = SignUpButton.frame.height / 2
     }
     
+    // MARK: - Method
+    private func presentSignUpViewController() {
+        let signUpVC = SignUpViewController()
+        let navigationVC = UINavigationController(rootViewController: signUpVC)
+        navigationVC.modalPresentationStyle = .overFullScreen
+        present(navigationVC, animated: true)
+    }
+    
     // MARK: - Binding
     private func bindingViewModel() {
         viewModel.isValidSignIn()
@@ -117,12 +125,12 @@ final class SignInViewController: UIViewController {
         
         viewModel.emailValidSubject
             .sink { [weak self] isValid in
-                self?.emailValidLabel.isHidden = isValid
+                self?.emailValidLabel.text = isValid ? " " : " 이메일이 올바른 형식이 아닙니다"
             }.store(in: &subscriptions)
         
         viewModel.passwordValidSubject
             .sink { [weak self] isValid in
-                self?.passwordValidLabel.isHidden = isValid
+                self?.passwordValidLabel.text = isValid ? " " : " 비밀번호가 올바른 형식이 아닙니다"
             }.store(in: &subscriptions)
     }
     
@@ -150,7 +158,7 @@ final class SignInViewController: UIViewController {
         
         SignUpButton.tapPublisher
             .sink { [weak self] in
-                self?.viewModel.signUp()
+                self?.presentSignUpViewController()
             }.store(in: &subscriptions)
     }
     

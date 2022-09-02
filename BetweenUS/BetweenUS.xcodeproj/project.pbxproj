@@ -11,6 +11,9 @@
 		0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */; };
 		0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */; };
 		0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16D28C1EE13008CC238 /* AuthManager.swift */; };
+		0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */; };
+		0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A17128C2066C008CC238 /* SignInViewModel.swift */; };
+		0E91A17628C215EA008CC238 /* SignUpUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */; };
 		0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */; };
 		0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */; };
 		0EB8FCE128C0CE3B00D86240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE028C0CE3B00D86240 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoginViewModel.swift; sourceTree = "<group>"; };
 		0E91A16D28C1EE13008CC238 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		0E91A17128C2066C008CC238 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserInformationViewController.swift; sourceTree = "<group>"; };
 		0EB8FCD428C0CE3A00D86240 /* BetweenUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetweenUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +67,8 @@
 		0E91A16328C1D99F008CC238 /* Rogin */ = {
 			isa = PBXGroup;
 			children = (
-				0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */,
-				0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */,
+				0E91A17428C215CA008CC238 /* SignUp */,
+				0E91A17328C215C1008CC238 /* SignIn */,
 				0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */,
 			);
 			path = Rogin;
@@ -82,6 +88,25 @@
 				0E91A16D28C1EE13008CC238 /* AuthManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		0E91A17328C215C1008CC238 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */,
+				0E91A17128C2066C008CC238 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		0E91A17428C215CA008CC238 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */,
+				0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */,
+				0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		0EB8FCCB28C0CE3A00D86240 = {
@@ -258,10 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E91A17628C215EA008CC238 /* SignUpUserInformationViewController.swift in Sources */,
 				0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */,
 				0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */,
+				0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */,
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
+				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
 				0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */,
 				0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */,
 				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
