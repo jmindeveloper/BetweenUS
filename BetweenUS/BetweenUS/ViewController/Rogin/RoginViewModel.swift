@@ -17,6 +17,7 @@ final class RoginViewModel {
     let emailValidSubject = CurrentValueSubject<Bool, Never>(false)
     let passwordValidSubject = CurrentValueSubject<Bool, Never>(false)
     let checkPasswordValidSubject = CurrentValueSubject<Bool, Never>(false)
+    private let authManager = AuthManager()
     
     // MARK: - Method
     private func emailValid() -> AnyPublisher<Bool, Never> {
@@ -80,5 +81,10 @@ final class RoginViewModel {
                     return false
                 }
             }.eraseToAnyPublisher()
+    }
+    
+    func signIn() {
+        print("email: \(email), password: \(password)")
+        authManager.signIn(email: email, password: password)
     }
 }
