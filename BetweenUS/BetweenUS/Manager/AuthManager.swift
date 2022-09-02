@@ -36,6 +36,10 @@ final class AuthManager {
     }
     
     func logout() {
-        try! Auth.auth().signOut()
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("로그아웃에 실패했습니다")
+        }
     }
 }
