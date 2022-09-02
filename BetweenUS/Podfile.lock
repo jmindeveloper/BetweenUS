@@ -1,4 +1,5 @@
 PODS:
+  - CombineCocoa (0.4.0)
   - FirebaseAnalytics (9.1.0):
     - FirebaseAnalytics/AdIdSupport (= 9.1.0)
     - FirebaseCore (~> 9.0)
@@ -86,11 +87,13 @@ PODS:
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - CombineCocoa
   - FirebaseAnalytics
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - CombineCocoa
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -104,6 +107,7 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  CombineCocoa: 68a050228ce7c53c1c5ac2c57cccf92a7f5c5085
   FirebaseAnalytics: bf11064790ac96804df1df9ddc0ae45af950d9fc
   FirebaseCore: b7bfc258e996eada23b3666bd6b9a22ca092acb8
   FirebaseCoreDiagnostics: 2dabba3412b23b524823325739f45e520f67d1e7
@@ -116,6 +120,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: e5a85f8eb5f911ba4bdfd5af4d3724486f676caf
+PODFILE CHECKSUM: 61060175ee4d42cb9501aa65e98834111b5a8f4b
 
 COCOAPODS: 1.10.2
