@@ -87,4 +87,8 @@ final class RoginViewModel {
         print("email: \(email), password: \(password)")
         authManager.signIn(email: email, password: password)
     }
+    
+    func signUp() {
+        authManager.signUp(email: email, password: password)
+    }
 }

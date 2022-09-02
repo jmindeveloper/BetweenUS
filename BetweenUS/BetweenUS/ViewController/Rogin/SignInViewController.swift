@@ -150,7 +150,7 @@ final class SignInViewController: UIViewController {
         
         SignUpButton.tapPublisher
             .sink { [weak self] in
-                print("회원가입")
+                self?.viewModel.signUp()
             }.store(in: &subscriptions)
     }
     

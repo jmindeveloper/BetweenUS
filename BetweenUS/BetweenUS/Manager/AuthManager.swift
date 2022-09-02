@@ -27,4 +27,15 @@ final class AuthManager {
             print("error: ", error)
         }
     }
+    
+    func signUp(email: String, password: String) {
+        logout()
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            print("result: ", result, "error: ", error)
+        }
+    }
+    
+    func logout() {
+        try! Auth.auth().signOut()
+    }
 }
