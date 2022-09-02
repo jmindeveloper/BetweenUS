@@ -11,10 +11,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private func configureNavigation() {
+        UINavigationBar.appearance().barTintColor = .viewBackground
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = .darkTintColor
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-        UINavigationBar.appearance().tintColor = .darkTintColor
+        configureNavigation()
         let rootVC = SignInViewController()
         
         window = UIWindow(windowScene: scene)

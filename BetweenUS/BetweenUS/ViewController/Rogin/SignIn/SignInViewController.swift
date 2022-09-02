@@ -17,6 +17,7 @@ final class SignInViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "이메일"
         textField.borderStyle = .roundedRect
+        textField.configure()
         
         return textField
     }()
@@ -35,6 +36,8 @@ final class SignInViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "비밀번호"
         textField.borderStyle = .roundedRect
+        textField.configure()
+        textField.isSecureTextEntry = true
         
         return textField
     }()
