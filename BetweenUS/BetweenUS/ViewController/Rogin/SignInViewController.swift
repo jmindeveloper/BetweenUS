@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Combine
+import CombineCocoa
 
 final class SignInViewController: UIViewController {
     
@@ -55,11 +57,12 @@ final class SignInViewController: UIViewController {
         return stackView
     }()
     
-    private let SignInButton: UIButton = {
+    private let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 30, weight: .semibold)
         button.backgroundColor = .lightGray
+        button.isEnabled = false
         
         return button
     }()
@@ -81,6 +84,10 @@ final class SignInViewController: UIViewController {
         return stackView
     }()
     
+    // MARK: - Properties
+    private let viewModel = RoginViewModel()
+    private var subscriptions = Set<AnyCancellable>()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,17 +95,64 @@ final class SignInViewController: UIViewController {
         configureSubViews()
         setConstraintsOfLoginTextFieldStackView()
         setConstraintsOfLoginButtonStackView()
+        
+        bindingViewModel()
+        bindingViewProperties()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(#function)
-        SignInButton.layer.cornerRadius = SignInButton.frame.height / 2
+        signInButton.layer.cornerRadius = signInButton.frame.height / 2
         SignUpButton.layer.cornerRadius = SignUpButton.frame.height / 2
     }
     
     // MARK: - Binding
+    private func bindingViewModel() {
+        viewModel.isValidSignIn()
+            .sink { [weak self] isValid in
+                self?.signInButton.isEnabled = isValid
+                self?.signInButton.backgroundColor = isValid ? .orange : .lightGray
+            }.store(in: &subscriptions)
+        
+        viewModel.emailValidSubject
+            .sink { [weak self] isValid in
+                self?.emailValidLabel.isHidden = isValid
+            }.store(in: &subscriptions)
+        
+        viewModel.passwordValidSubject
+            .sink { [weak self] isValid in
+                self?.passwordValidLabel.isHidden = isValid
+            }.store(in: &subscriptions)
+    }
     
+    private func bindingViewProperties() {
+        emailTextField.textPublisher
+            .sink { [weak self] text in
+                guard let text = text else {
+                    return
+                }
+                self?.viewModel.email = text
+            }.store(in: &subscriptions)
+        
+        passwordTextField.textPublisher
+            .sink { [weak self] text in
+                guard let text = text else {
+                    return
+                }
+                self?.viewModel.password = text
+            }.store(in: &subscriptions)
+        
+        signInButton.tapPublisher
+            .sink { [weak self] in
+                print("로그인")
+            }.store(in: &subscriptions)
+        
+        SignUpButton.tapPublisher
+            .sink { [weak self] in
+                print("회원가입")
+            }.store(in: &subscriptions)
+    }
     
     // MARK: - UI
     private func configureSubViews() {
@@ -111,7 +165,7 @@ final class SignInViewController: UIViewController {
             loginTextFieldStackView.addArrangedSubview($0)
         }
         
-        [SignInButton, SignUpButton].forEach {
+        [signInButton, SignUpButton].forEach {
             loginButtonStackView.addArrangedSubview($0)
         }
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */; };
 		0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */; };
+		0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */; };
 		0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */; };
 		0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */; };
 		0EB8FCE128C0CE3B00D86240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE028C0CE3B00D86240 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoginViewModel.swift; sourceTree = "<group>"; };
 		0EB8FCD428C0CE3A00D86240 /* BetweenUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetweenUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */,
 				0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */,
+				0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */,
 			);
 			path = Rogin;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */,
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
+				0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */,
 				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
