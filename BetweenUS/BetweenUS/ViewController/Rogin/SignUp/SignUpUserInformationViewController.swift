@@ -62,8 +62,6 @@ final class SignUpUserInformationViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "생년월일"
         textField.borderStyle = .roundedRect
-        textField.inputView = createDateSelectKeyboard()
-        textField.inputAccessoryView = createDateSelectToolbar()
         
         return textField
     }()
@@ -113,6 +111,9 @@ final class SignUpUserInformationViewController: UIViewController {
         configureSubViews()
         setConstraintsOfTextFieldStackView()
         setConstraintsOfButtonStackView()
+        
+        createDateSelectToolbar()
+        createDateSelectKeyboard()
     }
     
     // MARK: - Method
@@ -120,7 +121,7 @@ final class SignUpUserInformationViewController: UIViewController {
         view.endEditing(true)
     }
     
-    private func createDateSelectKeyboard() -> UIView {
+    private func createDateSelectKeyboard() {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .inline
@@ -128,21 +129,29 @@ final class SignUpUserInformationViewController: UIViewController {
         picker.locale = Locale(identifier: "Korean")
         picker.datePublisher
             .sink { [weak self] date in
-                print(date)
+                self?.birthdayTextField.text = String.dateToString(date: date)
             }.store(in: &subscriptions)
-        return picker
+        birthdayTextField.inputView = picker
     }
     
-    private func createDateSelectToolbar() -> UIToolbar {
+    private func createDateSelectToolbar() {
         let toolBar = UIToolbar()
                 toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
         doneButton.tapPublisher
             .sink { [weak self] in
-                print("done")
+                self?.doneSelectDate()
             }.store(in: &subscriptions)
-        toolBar.setItems([doneButton], animated: true) // 툴바에 done버튼 추가
-        return toolBar
+        toolBar.setItems([doneButton], animated: false)
+        birthdayTextField.inputAccessoryView = toolBar
+    }
+    
+    private func selectDate(date: Date) {
+        birthdayTextField.text = String.dateToString(date: date)
+    }
+    
+    private func doneSelectDate() {
+        birthdayTextField.resignFirstResponder()
     }
     
     // MARK: - UI
