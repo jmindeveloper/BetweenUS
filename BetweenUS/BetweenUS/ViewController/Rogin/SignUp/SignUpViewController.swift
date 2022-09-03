@@ -129,6 +129,10 @@ final class SignUpViewController: UIViewController {
         navigationController?.pushViewController(userInfoVC, animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - Biding
     private func bindingViewModel() {
         viewModel.isValidSignUp()

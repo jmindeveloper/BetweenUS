@@ -118,6 +118,10 @@ final class SignInViewController: UIViewController {
         present(navigationVC, animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - Binding
     private func bindingViewModel() {
         viewModel.isValidSignIn()
