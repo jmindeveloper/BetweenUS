@@ -22,6 +22,8 @@
 		0EB8FCE428C0CE3B00D86240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE228C0CE3B00D86240 /* LaunchScreen.storyboard */; };
 		0EB8FCED28C0CF9200D86240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */; };
 		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
+		0EF14B4928C3585800C10470 /* FBUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4828C3585800C10470 /* FBUserDatabase.swift */; };
+		0EF14B4C28C358BE00C10470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4B28C358BE00C10470 /* User.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		0EB8FCE528C0CE3B00D86240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0EF14B4828C3585800C10470 /* FBUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDatabase.swift; sourceTree = "<group>"; };
+		0EF14B4B28C358BE00C10470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,7 @@
 		0E91A16C28C1EE06008CC238 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0EF14B4728C3584100C10470 /* Firebase */,
 				0E91A16D28C1EE13008CC238 /* AuthManager.swift */,
 			);
 			path = Manager;
@@ -138,6 +143,7 @@
 			children = (
 				0E91A16628C1D9FD008CC238 /* Extension */,
 				0E91A16C28C1EE06008CC238 /* Manager */,
+				0EF14B4A28C3588A00C10470 /* Model */,
 				0E91A16228C1D998008CC238 /* ViewController */,
 				0EB8FCEB28C0CF3100D86240 /* Application */,
 			);
@@ -155,6 +161,22 @@
 				0EB8FCE528C0CE3B00D86240 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		0EF14B4728C3584100C10470 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				0EF14B4828C3585800C10470 /* FBUserDatabase.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		0EF14B4A28C3588A00C10470 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EF14B4B28C358BE00C10470 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		156735B04BB6298EFA922C10 /* Pods */ = {
@@ -290,10 +312,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E91A17628C215EA008CC238 /* SignUpUserInformationViewController.swift in Sources */,
+				0EF14B4928C3585800C10470 /* FBUserDatabase.swift in Sources */,
 				0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */,
 				0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */,
 				0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */,
 				0E4A84D128C33AD800BA72B0 /* String+Extension.swift in Sources */,
+				0EF14B4C28C358BE00C10470 /* User.swift in Sources */,
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
 				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
