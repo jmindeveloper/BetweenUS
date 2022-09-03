@@ -42,7 +42,13 @@ final class SignUpViewModel: RoginViewModel {
     }
     
     func signUp() {
-        authManager.signUp(email: email, password: password)
+        let user = User(
+            name: name,
+            nickName: nickName,
+            birthday: birthDay,
+            content: nil
+        )
+        authManager.signUp(email: email, password: password, user: user)
     }
     
     private func notEmptyAllTextField() {

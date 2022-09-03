@@ -15,29 +15,27 @@ final class AuthManager {
     
     private init() { }
     
-    let handler = Auth.auth().addStateDidChangeListener { auth, user in
-        print("auth: ", auth, "user: ", user?.uid)
-        
-    }
-    
-    deinit {
-        Auth.auth().removeStateDidChangeListener(handler)
-    }
+    private let userDb = FBUserDatabase()
     
     func signIn(email: String, password: String) {
         Auth.auth().signIn(
             withEmail: email,
             password: password
         ) { [weak self] result, error in
-            print("signInResult: ", result)
-            print("error: ", error)
+            guard let result = result else { return }
+            self?.userDb.loadUser(id: result.user.uid) { user in
+                print(user)
+            }
         }
     }
     
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, user: User) {
         logout()
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            print("result: ", result, "error: ", error)
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard let self = self else { return }
+            guard let result = result else { return }
+            
+            self.userDb.saveNewUser(user: user, id: result.user.uid)
         }
     }
     
