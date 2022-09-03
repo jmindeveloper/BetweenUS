@@ -24,7 +24,7 @@ final class AuthManager {
         ) { [weak self] result, error in
             guard let result = result else { return }
             self?.userDb.loadUser(id: result.user.uid) { user in
-                print(user)
+                UserInformation.shared.user = user
             }
         }
     }

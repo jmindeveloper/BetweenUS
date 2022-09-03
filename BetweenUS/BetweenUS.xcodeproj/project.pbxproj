@@ -24,6 +24,7 @@
 		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
 		0EF14B4928C3585800C10470 /* FBUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4828C3585800C10470 /* FBUserDatabase.swift */; };
 		0EF14B4C28C358BE00C10470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4B28C358BE00C10470 /* User.swift */; };
+		0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4D28C370EA00C10470 /* UserInformation.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0EF14B4828C3585800C10470 /* FBUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDatabase.swift; sourceTree = "<group>"; };
 		0EF14B4B28C358BE00C10470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0EF14B4D28C370EA00C10470 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF14B4B28C358BE00C10470 /* User.swift */,
+				0EF14B4D28C370EA00C10470 /* UserInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
 				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
+				0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */,
 				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
 				0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */,
 				0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */,
