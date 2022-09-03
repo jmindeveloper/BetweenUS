@@ -7,16 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4A84D128C33AD800BA72B0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A84D028C33AD800BA72B0 /* String+Extension.swift */; };
+		0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */; };
+		0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */; };
+		0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */; };
+		0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16D28C1EE13008CC238 /* AuthManager.swift */; };
+		0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */; };
+		0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A17128C2066C008CC238 /* SignInViewModel.swift */; };
+		0E91A17628C215EA008CC238 /* SignUpUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */; };
+		0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA03F0528C223B200F6BE75 /* UITextField+Extension.swift */; };
 		0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */; };
 		0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */; };
 		0EB8FCE128C0CE3B00D86240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE028C0CE3B00D86240 /* Assets.xcassets */; };
 		0EB8FCE428C0CE3B00D86240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE228C0CE3B00D86240 /* LaunchScreen.storyboard */; };
 		0EB8FCED28C0CF9200D86240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */; };
-		0EB8FCEF28C0D1C900D86240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* ViewController.swift */; };
+		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E4A84D028C33AD800BA72B0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoginViewModel.swift; sourceTree = "<group>"; };
+		0E91A16D28C1EE13008CC238 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		0E91A17128C2066C008CC238 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserInformationViewController.swift; sourceTree = "<group>"; };
+		0EA03F0528C223B200F6BE75 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		0EB8FCD428C0CE3A00D86240 /* BetweenUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetweenUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +42,7 @@
 		0EB8FCE328C0CE3B00D86240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB8FCE528C0CE3B00D86240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0EB8FCEE28C0D1C900D86240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +60,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E91A16228C1D998008CC238 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A16328C1D99F008CC238 /* Rogin */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0E91A16328C1D99F008CC238 /* Rogin */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A17428C215CA008CC238 /* SignUp */,
+				0E91A17328C215C1008CC238 /* SignIn */,
+				0E91A16A28C1E5CC008CC238 /* RoginViewModel.swift */,
+			);
+			path = Rogin;
+			sourceTree = "<group>";
+		};
+		0E91A16628C1D9FD008CC238 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A16728C1DA07008CC238 /* UIColor+Extension.swift */,
+				0EA03F0528C223B200F6BE75 /* UITextField+Extension.swift */,
+				0E4A84D028C33AD800BA72B0 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0E91A16C28C1EE06008CC238 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A16D28C1EE13008CC238 /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0E91A17328C215C1008CC238 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */,
+				0E91A17128C2066C008CC238 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		0E91A17428C215CA008CC238 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				0E91A16428C1D9CB008CC238 /* SignUpViewController.swift */,
+				0E91A17528C215EA008CC238 /* SignUpUserInformationViewController.swift */,
+				0E91A16F28C1F4C7008CC238 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		0EB8FCCB28C0CE3A00D86240 = {
 			isa = PBXGroup;
 			children = (
@@ -63,9 +136,9 @@
 		0EB8FCD628C0CE3A00D86240 /* BetweenUS */ = {
 			isa = PBXGroup;
 			children = (
-				0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */,
-				0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */,
-				0EB8FCEE28C0D1C900D86240 /* ViewController.swift */,
+				0E91A16628C1D9FD008CC238 /* Extension */,
+				0E91A16C28C1EE06008CC238 /* Manager */,
+				0E91A16228C1D998008CC238 /* ViewController */,
 				0EB8FCEB28C0CF3100D86240 /* Application */,
 			);
 			path = BetweenUS;
@@ -74,6 +147,8 @@
 		0EB8FCEB28C0CF3100D86240 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0EB8FCD728C0CE3A00D86240 /* AppDelegate.swift */,
+				0EB8FCD928C0CE3A00D86240 /* SceneDelegate.swift */,
 				0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */,
 				0EB8FCE028C0CE3B00D86240 /* Assets.xcassets */,
 				0EB8FCE228C0CE3B00D86240 /* LaunchScreen.storyboard */,
@@ -214,9 +289,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EB8FCEF28C0D1C900D86240 /* ViewController.swift in Sources */,
+				0E91A17628C215EA008CC238 /* SignUpUserInformationViewController.swift in Sources */,
+				0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */,
 				0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */,
+				0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */,
+				0E4A84D128C33AD800BA72B0 /* String+Extension.swift in Sources */,
+				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
+				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
+				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
+				0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */,
+				0E91A16B28C1E5CC008CC238 /* RoginViewModel.swift in Sources */,
+				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
