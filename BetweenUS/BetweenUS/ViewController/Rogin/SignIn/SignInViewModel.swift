@@ -24,6 +24,8 @@ final class SignInViewModel: RoginViewModel {
     }
     
     func signIn() {
-        authManager.signIn(email: email, password: password)
+        authManager.signIn(email: email, password: password) {
+            $0
+        }
     }
 }

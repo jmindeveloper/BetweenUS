@@ -11,7 +11,7 @@ import FirebaseAuth
 
 final class AuthManager {
     
-    enum AuthError {
+    enum AuthError: Error {
         case error(type: String, message: String)
     }
     
@@ -24,8 +24,7 @@ final class AuthManager {
     func signIn(
         email: String,
         password: String,
-        completion: (() -> Void)? = nil,
-        errorCompletion: ((AuthError) -> Void)? = nil
+        completion: @escaping ((Result<Bool, AuthError>) -> Void)
     ) {
         Auth.auth().signIn(
             withEmail: email,
@@ -35,11 +34,12 @@ final class AuthManager {
             if let error = error {
                 let errorCode = (error as NSError).code
                 guard let authError = self.branchError(code: errorCode) else { return }
-                errorCompletion?(authError)
+                completion(.failure(authError))
             }
             guard let result = result else { return }
             self.userDb.loadUser(id: result.user.uid) { user in
                 UserInformation.shared.user = user
+                completion(.success(true))
             }
         }
     }
@@ -48,8 +48,7 @@ final class AuthManager {
         email: String,
         password: String,
         user: User,
-        completion: (() -> Void)? = nil,
-        errorCompletion: ((AuthError) -> Void)? = nil
+        completion: @escaping ((Result<Bool, AuthError>) -> (Void))
     ) {
         logout()
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
@@ -58,12 +57,12 @@ final class AuthManager {
                 let errorCode = (error as NSError).code
                 print(errorCode, error.localizedDescription)
                 guard let authError = self.branchError(code: errorCode) else { return }
-                errorCompletion?(authError)
+                completion(.failure(authError))
             }
             guard let result = result else { return }
             
             self.userDb.saveNewUser(user: user, id: result.user.uid)
-            completion?()
+            completion(.success(true))
         }
     }
     
