@@ -125,7 +125,7 @@ final class SignUpViewController: UIViewController {
     
     // MARK: - Method
     private func pushSignUpUserInfoViewController() {
-        let userInfoVC = SignUpUserInformationViewController()
+        let userInfoVC = SignUpUserInformationViewController(viewModel: viewModel)
         navigationController?.pushViewController(userInfoVC, animated: true)
     }
     

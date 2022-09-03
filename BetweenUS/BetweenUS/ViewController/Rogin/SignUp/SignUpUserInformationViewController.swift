@@ -83,7 +83,7 @@ final class SignUpUserInformationViewController: UIViewController {
         return button
     }()
     
-    private let userInfoButton: UIButton = {
+    private let SignUpButton: UIButton = {
         let button = UIButton()
         button.setTitle("가입", for: .normal)
         button.setTitleColor(.lightTintColor, for: .normal)
@@ -102,15 +102,30 @@ final class SignUpUserInformationViewController: UIViewController {
     }()
     
     // MARK: - Properties
+    private let viewModel: SignUpViewModel
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - LifeCycle
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .viewBackground
         configureSubViews()
         setConstraintsOfTextFieldStackView()
         setConstraintsOfButtonStackView()
+        
+        configureView()
+        
+        bindingViewProperties()
+        bindingViewModel()
         
         createDateSelectToolbar()
         createDateSelectKeyboard()
@@ -129,7 +144,7 @@ final class SignUpUserInformationViewController: UIViewController {
         picker.locale = Locale(identifier: "Korean")
         picker.datePublisher
             .sink { [weak self] date in
-                self?.birthdayTextField.text = String.dateToString(date: date)
+                self?.selectDate(date: date)
             }.store(in: &subscriptions)
         birthdayTextField.inputView = picker
     }
@@ -151,7 +166,51 @@ final class SignUpUserInformationViewController: UIViewController {
     }
     
     private func doneSelectDate() {
+        viewModel.birthDay = birthdayTextField.text ?? String.dateToString()
         birthdayTextField.resignFirstResponder()
+    }
+    
+    func configureView() {
+        birthdayTextField.text = viewModel.birthDay
+        nameTextField.text = viewModel.name
+        nickNameTextField.text = viewModel.nickName
+    }
+    
+    // MARK: - Binding
+    private func bindingViewProperties() {
+        nameTextField.textPublisher
+            .sink { [weak self] name in
+                guard let name = name else {
+                    return
+                }
+                self?.viewModel.name = name
+            }.store(in: &subscriptions)
+        
+        nickNameTextField.textPublisher
+            .sink { [weak self] nickName in
+                guard let nickName = nickName else {
+                    return
+                }
+                self?.viewModel.nickName = nickName
+            }.store(in: &subscriptions)
+        
+        dismissButton.tapPublisher
+            .sink { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }.store(in: &subscriptions)
+        
+        SignUpButton.tapPublisher
+            .sink { [weak self] in
+                self?.viewModel.signUp()
+            }.store(in: &subscriptions)
+    }
+    
+    private func bindingViewModel() {
+        viewModel.notEmptyAllTextFieldSubject
+            .sink { [weak self] notEmpty in
+                self?.SignUpButton.isEnabled = notEmpty
+                self?.SignUpButton.setTitleColor(notEmpty ? .darkTintColor : .lightTintColor, for: .normal)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI
@@ -165,7 +224,7 @@ final class SignUpUserInformationViewController: UIViewController {
             textFieldStackView.addArrangedSubview($0)
         }
         
-        [dismissButton, userInfoButton].forEach {
+        [dismissButton, SignUpButton].forEach {
             buttonStackView.addArrangedSubview($0)
         }
     }

@@ -10,6 +10,24 @@ import Combine
 
 final class SignUpViewModel: RoginViewModel {
     
+    // MARK: - Properties
+    var name = "" {
+        didSet {
+            notEmptyAllTextField()
+        }
+    }
+    var nickName = ""{
+        didSet {
+            notEmptyAllTextField()
+        }
+    }
+    var birthDay = ""{
+        didSet {
+            notEmptyAllTextField()
+        }
+    }
+    let notEmptyAllTextFieldSubject = PassthroughSubject<Bool, Never>()
+    
     // MARK: - Method
     func isValidSignUp() -> AnyPublisher<Bool, Never> {
         emailValid() 
@@ -25,5 +43,13 @@ final class SignUpViewModel: RoginViewModel {
     
     func signUp() {
         authManager.signUp(email: email, password: password)
+    }
+    
+    private func notEmptyAllTextField() {
+        if name.isEmpty || nickName.isEmpty || birthDay.isEmpty {
+            notEmptyAllTextFieldSubject.send(false)
+        } else {
+            notEmptyAllTextFieldSubject.send(true)
+        }
     }
 }

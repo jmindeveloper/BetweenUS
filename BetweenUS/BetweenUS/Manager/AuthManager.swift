@@ -17,6 +17,7 @@ final class AuthManager {
     
     let handler = Auth.auth().addStateDidChangeListener { auth, user in
         print("auth: ", auth, "user: ", user?.uid)
+        
     }
     
     deinit {
