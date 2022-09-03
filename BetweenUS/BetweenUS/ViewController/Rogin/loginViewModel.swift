@@ -1,5 +1,5 @@
 //
-//  RoginViewModel.swift
+//  loginViewModel.swift
 //  BetweenUS
 //
 //  Created by J_Min on 2022/09/02.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class RoginViewModel {
+class loginViewModel {
     
     // MARK: - Properties
     @Published var email = ""
@@ -17,9 +17,22 @@ class RoginViewModel {
     let emailValidSubject = CurrentValueSubject<Bool, Never>(false)
     let passwordValidSubject = CurrentValueSubject<Bool, Never>(false)
     let checkPasswordValidSubject = CurrentValueSubject<Bool, Never>(false)
+    let authSuccessSubject = PassthroughSubject<Void, Never>()
+    let authFailureSubject = PassthroughSubject<String, Never>()
     let authManager = AuthManager.shared
     
     // MARK: - Method
+    func authCompletion(result: Result<Bool, AuthManager.AuthError>) {
+        switch result {
+        case .success(_):
+            authSuccessSubject.send()
+        case .failure(let error):
+            if case .error(type: _, message: let message) = error {
+                authFailureSubject.send(message)
+            }
+        }
+    }
+    
     func emailValid() -> AnyPublisher<Bool, Never> {
         $email
             .map { [weak self] in

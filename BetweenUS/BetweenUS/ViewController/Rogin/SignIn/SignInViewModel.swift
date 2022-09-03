@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class SignInViewModel: RoginViewModel {
+final class SignInViewModel: loginViewModel {
     
     // MARK: - Method
     func isValidSignIn() -> AnyPublisher<Bool, Never> {
@@ -24,8 +24,8 @@ final class SignInViewModel: RoginViewModel {
     }
     
     func signIn() {
-        authManager.signIn(email: email, password: password) {
-            $0
+        authManager.signIn(email: email, password: password) { [weak self] in
+            self?.authCompletion(result: $0)
         }
     }
 }

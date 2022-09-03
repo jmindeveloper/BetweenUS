@@ -211,6 +211,16 @@ final class SignUpUserInformationViewController: UIViewController {
                 self?.SignUpButton.isEnabled = notEmpty
                 self?.SignUpButton.setTitleColor(notEmpty ? .darkTintColor : .lightTintColor, for: .normal)
             }.store(in: &subscriptions)
+        
+        viewModel.authSuccessSubject
+            .sink { [weak self] in
+                print("회원가입 성공")
+            }.store(in: &subscriptions)
+        
+        viewModel.authFailureSubject
+            .sink { [weak self] errorMessage in
+                print("회원가입 실패: ", errorMessage)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI

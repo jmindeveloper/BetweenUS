@@ -139,6 +139,16 @@ final class SignInViewController: UIViewController {
             .sink { [weak self] isValid in
                 self?.passwordValidLabel.text = isValid ? " " : " 비밀번호가 올바른 형식이 아닙니다"
             }.store(in: &subscriptions)
+        
+        viewModel.authSuccessSubject
+            .sink { [weak self] in
+                print("로그인 성공")
+            }.store(in: &subscriptions)
+        
+        viewModel.authFailureSubject
+            .sink { [weak self] errorMessage in
+                print("로그인 실패: ", errorMessage)
+            }.store(in: &subscriptions)
     }
     
     private func bindingViewProperties() {
