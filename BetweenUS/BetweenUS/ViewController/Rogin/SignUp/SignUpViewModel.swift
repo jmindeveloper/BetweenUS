@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class SignUpViewModel: RoginViewModel {
+final class SignUpViewModel: loginViewModel {
     
     // MARK: - Properties
     var name = "" {
@@ -48,7 +48,9 @@ final class SignUpViewModel: RoginViewModel {
             birthday: birthDay,
             content: nil
         )
-        authManager.signUp(email: email, password: password, user: user)
+        authManager.signUp(email: email, password: password, user: user) { [weak self] in
+            self?.authCompletion(result: $0)
+        }
     }
     
     private func notEmptyAllTextField() {

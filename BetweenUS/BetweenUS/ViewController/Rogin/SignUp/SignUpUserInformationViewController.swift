@@ -211,6 +211,18 @@ final class SignUpUserInformationViewController: UIViewController {
                 self?.SignUpButton.isEnabled = notEmpty
                 self?.SignUpButton.setTitleColor(notEmpty ? .darkTintColor : .lightTintColor, for: .normal)
             }.store(in: &subscriptions)
+        
+        viewModel.authSuccessSubject
+            .sink { [weak self] in
+                self?.dismiss(animated: true)
+            }.store(in: &subscriptions)
+        
+        viewModel.authFailureSubject
+            .sink { [weak self] errorMessage in
+                let alert = UIAlertController.createAlert(title: nil, message: errorMessage)
+                    .addAction(title: "확인")
+                self?.present(alert, animated: true)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI
