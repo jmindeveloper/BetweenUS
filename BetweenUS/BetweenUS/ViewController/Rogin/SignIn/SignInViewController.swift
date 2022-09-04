@@ -142,7 +142,10 @@ final class SignInViewController: UIViewController {
         
         viewModel.authSuccessSubject
             .sink { [weak self] in
-                print("로그인 성공")
+                let tabbarController = MainTabbarViewController()
+                tabbarController.modalTransitionStyle = .crossDissolve
+                tabbarController.modalPresentationStyle = .fullScreen
+                self?.present(tabbarController, animated: true)
             }.store(in: &subscriptions)
         
         viewModel.authFailureSubject
