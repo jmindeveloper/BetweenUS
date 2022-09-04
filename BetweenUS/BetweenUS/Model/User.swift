@@ -13,5 +13,5 @@ struct User: Codable {
     var name: String
     var nickName: String
     var birthday: String
-    var content: [String]?
+    var betweenUsWorkSpace: [String]?
 }

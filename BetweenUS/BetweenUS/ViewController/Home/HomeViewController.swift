@@ -8,9 +8,24 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
+    
+    private var noWorkSpaceView: NoWorkSpaceView?
+    
+    override func loadView() {
+        super.loadView()
+        if UserInformation.shared.user?.betweenUsWorkSpace == nil {
+            view = NoWorkSpaceView()
+            noWorkSpaceView = view as? NoWorkSpaceView
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .viewBackground
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        noWorkSpaceView?.setButtonsRound()
     }
 }
 

@@ -19,9 +19,15 @@ final class FBUserDatabase {
                 "name": user.name,
                 "nickName": user.nickName,
                 "birthday": user.birthday,
-                "connect": nil
+                "betweenUsWorkSpace": []
             ]
         )
+        
+        ref.child("users").child("nickName").child(user.nickName).child("id").observeSingleEvent(of: .value) { [weak self] snapshot in
+            var snapshot = snapshot.value as? [String] ?? []
+            snapshot.append(user.id)
+            self?.ref.child("users").child("nickName").child(user.nickName).setValue(["id": snapshot])
+        }
     }
     
     func loadUser(id: String, completion: @escaping (User) -> Void) {

@@ -21,11 +21,15 @@ final class AuthManager {
     
     private let userDb = FBUserDatabase()
     
-    func isLogin() -> Bool {
+    func isLogin(completion: @escaping (Bool) -> Void) {
         if Auth.auth().currentUser == nil {
-            return false
+            completion(false)
         } else {
-            return true
+            let id = Auth.auth().currentUser!.uid
+            userDb.loadUser(id: id) { user in
+                UserInformation.shared.user = user
+                completion(true)
+            }
         }
     }
     

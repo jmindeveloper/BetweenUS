@@ -32,6 +32,8 @@
 		0EFC66F928C47A250084B7A9 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66F828C47A250084B7A9 /* GalleryViewController.swift */; };
 		0EFC66FB28C47A2D0084B7A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66FA28C47A2D0084B7A9 /* ProfileViewController.swift */; };
 		0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66FC28C47AE60084B7A9 /* UIViewController+Extension.swift */; };
+		0EFC670028C4947D0084B7A9 /* NoWorkSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */; };
+		0EFC670228C495DE0084B7A9 /* StackViewSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		0EFC66F828C47A250084B7A9 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		0EFC66FA28C47A2D0084B7A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0EFC66FC28C47AE60084B7A9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoWorkSpaceView.swift; sourceTree = "<group>"; };
+		0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSpacer.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +172,7 @@
 				0E91A16C28C1EE06008CC238 /* Manager */,
 				0EF14B4A28C3588A00C10470 /* Model */,
 				0E91A16228C1D998008CC238 /* ViewController */,
+				0EFC66FE28C4943E0084B7A9 /* View */,
 				0EB8FCEB28C0CF3100D86240 /* Application */,
 			);
 			path = BetweenUS;
@@ -241,6 +246,15 @@
 				0EFC66FA28C47A2D0084B7A9 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		0EFC66FE28C4943E0084B7A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */,
+				0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		156735B04BB6298EFA922C10 /* Pods */ = {
@@ -390,11 +404,13 @@
 				0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */,
 				0EFC66EC28C472A40084B7A9 /* UIAlertController+Extension.swift in Sources */,
 				0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */,
+				0EFC670228C495DE0084B7A9 /* StackViewSpacer.swift in Sources */,
 				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
 				0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */,
 				0EFC66EF28C4785F0084B7A9 /* MainTabbarViewController.swift in Sources */,
 				0EFC66F928C47A250084B7A9 /* GalleryViewController.swift in Sources */,
 				0EFC66FB28C47A2D0084B7A9 /* ProfileViewController.swift in Sources */,
+				0EFC670028C4947D0084B7A9 /* NoWorkSpaceView.swift in Sources */,
 				0E91A16B28C1E5CC008CC238 /* loginViewModel.swift in Sources */,
 				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
 			);

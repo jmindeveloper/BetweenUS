@@ -23,12 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         
-        if AuthManager.shared.isLogin() {
-            let rootVC = MainTabbarViewController()
-            window?.rootViewController = rootVC
-        } else {
-            let rootVC = SignInViewController()
-            window?.rootViewController = rootVC
+        AuthManager.shared.isLogin { [weak self] isLogin in
+            if isLogin {
+                let rootVC = MainTabbarViewController()
+                self?.window?.rootViewController = rootVC
+            } else {
+                let rootVC = SignInViewController()
+                self?.window?.rootViewController = rootVC
+            }
         }
         
         window?.makeKeyAndVisible()

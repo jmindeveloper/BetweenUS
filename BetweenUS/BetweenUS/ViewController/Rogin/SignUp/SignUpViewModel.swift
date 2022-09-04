@@ -48,7 +48,7 @@ final class SignUpViewModel: loginViewModel {
             name: name,
             nickName: nickName,
             birthday: birthDay,
-            content: nil
+            betweenUsWorkSpace: nil
         )
         authManager.signUp(email: email, password: password, user: user) { [weak self] in
             self?.authCompletion(result: $0)
