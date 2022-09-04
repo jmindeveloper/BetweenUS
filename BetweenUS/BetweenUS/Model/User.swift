@@ -11,5 +11,5 @@ struct User: Codable {
     let name: String
     let nickName: String
     let birthday: String
-    let content: String?
+    let content: [String]?
 }

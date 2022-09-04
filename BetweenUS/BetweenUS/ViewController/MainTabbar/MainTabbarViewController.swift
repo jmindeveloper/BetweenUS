@@ -20,10 +20,10 @@ final class MainTabbarViewController: UITabBarController {
         let galleryVC = GalleryViewController()
         let profileVC = ProfileViewController()
         
-        homeVC.tabbarItem(title: "home", image: "house", selectedImage: "house.fill")
-        dayVC.tabbarItem(title: "d-day", image: "calendar", selectedImage: "calendar")
-        galleryVC.tabbarItem(title: "gallery", image: "photo", selectedImage: "photo.fill")
-        profileVC.tabbarItem(title: "profile", image: "person", selectedImage: "person.fill")
+        homeVC.tabbarItem(title: "홈", image: "house", selectedImage: "house.fill")
+        dayVC.tabbarItem(title: "일정", image: "calendar", selectedImage: "calendar")
+        galleryVC.tabbarItem(title: "갤러리", image: "photo", selectedImage: "photo.fill")
+        profileVC.tabbarItem(title: "프로필", image: "person", selectedImage: "person.fill")
         
         tabBar.tintColor = .darkTintColor
         tabBar.unselectedItemTintColor = .lightTintColor
