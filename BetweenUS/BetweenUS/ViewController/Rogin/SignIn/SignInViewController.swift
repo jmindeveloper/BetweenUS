@@ -147,7 +147,9 @@ final class SignInViewController: UIViewController {
         
         viewModel.authFailureSubject
             .sink { [weak self] errorMessage in
-                print("로그인 실패: ", errorMessage)
+                let alert = UIAlertController.createAlert(title: nil, message: errorMessage)
+                    .addAction(title: "확인")
+                self?.present(alert, animated: true)
             }.store(in: &subscriptions)
     }
     

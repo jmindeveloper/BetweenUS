@@ -214,12 +214,14 @@ final class SignUpUserInformationViewController: UIViewController {
         
         viewModel.authSuccessSubject
             .sink { [weak self] in
-                print("회원가입 성공")
+                self?.dismiss(animated: true)
             }.store(in: &subscriptions)
         
         viewModel.authFailureSubject
             .sink { [weak self] errorMessage in
-                print("회원가입 실패: ", errorMessage)
+                let alert = UIAlertController.createAlert(title: nil, message: errorMessage)
+                    .addAction(title: "확인")
+                self?.present(alert, animated: true)
             }.store(in: &subscriptions)
     }
     
