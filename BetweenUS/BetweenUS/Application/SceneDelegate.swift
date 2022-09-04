@@ -20,10 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         configureNavigation()
-        let rootVC = SignInViewController()
         
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = rootVC
+        
+        if AuthManager.shared.isLogin() {
+            let rootVC = MainTabbarViewController()
+            window?.rootViewController = rootVC
+        } else {
+            let rootVC = SignInViewController()
+            window?.rootViewController = rootVC
+        }
         
         window?.makeKeyAndVisible()
     }

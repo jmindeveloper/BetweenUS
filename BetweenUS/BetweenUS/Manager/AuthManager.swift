@@ -21,6 +21,14 @@ final class AuthManager {
     
     private let userDb = FBUserDatabase()
     
+    func isLogin() -> Bool {
+        if Auth.auth().currentUser == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func signIn(
         email: String,
         password: String,
@@ -55,7 +63,6 @@ final class AuthManager {
             guard let self = self else { return }
             if let error = error {
                 let errorCode = (error as NSError).code
-                print(errorCode, error.localizedDescription)
                 guard let authError = self.branchError(code: errorCode) else { return }
                 completion(.failure(authError))
             }
