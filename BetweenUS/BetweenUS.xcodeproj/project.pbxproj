@@ -26,6 +26,7 @@
 		0EF14B4C28C358BE00C10470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4B28C358BE00C10470 /* User.swift */; };
 		0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4D28C370EA00C10470 /* UserInformation.swift */; };
 		0EFC66EC28C472A40084B7A9 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66EB28C472A40084B7A9 /* UIAlertController+Extension.swift */; };
+		0EFC66EF28C4785F0084B7A9 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66EE28C4785F0084B7A9 /* MainTabbarViewController.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		0EF14B4B28C358BE00C10470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0EF14B4D28C370EA00C10470 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		0EFC66EB28C472A40084B7A9 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		0EFC66EE28C4785F0084B7A9 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 		0E91A16228C1D998008CC238 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0EFC66ED28C4784E0084B7A9 /* MainTabbar */,
 				0E91A16328C1D99F008CC238 /* Rogin */,
 			);
 			path = ViewController;
@@ -183,6 +186,14 @@
 				0EF14B4D28C370EA00C10470 /* UserInformation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0EFC66ED28C4784E0084B7A9 /* MainTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC66EE28C4785F0084B7A9 /* MainTabbarViewController.swift */,
+			);
+			path = MainTabbar;
 			sourceTree = "<group>";
 		};
 		156735B04BB6298EFA922C10 /* Pods */ = {
@@ -331,6 +342,7 @@
 				0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */,
 				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
 				0E91A16E28C1EE13008CC238 /* AuthManager.swift in Sources */,
+				0EFC66EF28C4785F0084B7A9 /* MainTabbarViewController.swift in Sources */,
 				0E91A16B28C1E5CC008CC238 /* loginViewModel.swift in Sources */,
 				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
 			);
