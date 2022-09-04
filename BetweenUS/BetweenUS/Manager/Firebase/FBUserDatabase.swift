@@ -11,9 +11,11 @@ import FirebaseDatabase
 final class FBUserDatabase {
     let ref = Database.database().reference()
     
-    func saveNewUser(user: User, id: String) {
-        ref.child("users").child(id).setValue(
+    func saveNewUser(user: User) {
+        ref.child("users").child(user.id).setValue(
             [
+                "id": user.id,
+                "email": user.email,
                 "name": user.name,
                 "nickName": user.nickName,
                 "birthday": user.birthday,

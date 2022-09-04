@@ -67,8 +67,9 @@ final class AuthManager {
                 completion(.failure(authError))
             }
             guard let result = result else { return }
-            
-            self.userDb.saveNewUser(user: user, id: result.user.uid)
+            var user = user
+            user.id = result.user.uid
+            self.userDb.saveNewUser(user: user)
             completion(.success(true))
         }
     }

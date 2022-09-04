@@ -43,6 +43,8 @@ final class SignUpViewModel: loginViewModel {
     
     func signUp() {
         let user = User(
+            id: "",
+            email: email,
             name: name,
             nickName: nickName,
             birthday: birthDay,
