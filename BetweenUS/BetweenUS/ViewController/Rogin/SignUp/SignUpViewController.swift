@@ -16,7 +16,6 @@ final class SignUpViewController: UIViewController {
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "이메일"
-        textField.borderStyle = .roundedRect
         textField.configure()
         
         return textField
@@ -35,7 +34,6 @@ final class SignUpViewController: UIViewController {
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "비밀번호"
-        textField.borderStyle = .roundedRect
         textField.configure()
         textField.isSecureTextEntry = true
         
@@ -55,7 +53,6 @@ final class SignUpViewController: UIViewController {
     private let checkPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "비밀번호 확인"
-        textField.borderStyle = .roundedRect
         textField.configure()
         textField.isSecureTextEntry = true
         
