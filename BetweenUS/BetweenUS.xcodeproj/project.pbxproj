@@ -22,6 +22,9 @@
 		0EB8FCE428C0CE3B00D86240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE228C0CE3B00D86240 /* LaunchScreen.storyboard */; };
 		0EB8FCED28C0CF9200D86240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */; };
 		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
+		0EE6243628CEFB85008B5EEF /* FBWorkSpaceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */; };
+		0EE6243828CEFC1E008B5EEF /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */; };
+		0EE6243A28CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */; };
 		0EF14B4928C3585800C10470 /* FBUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4828C3585800C10470 /* FBUserDatabase.swift */; };
 		0EF14B4C28C358BE00C10470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4B28C358BE00C10470 /* User.swift */; };
 		0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF14B4D28C370EA00C10470 /* UserInformation.swift */; };
@@ -56,6 +59,9 @@
 		0EB8FCE528C0CE3B00D86240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBWorkSpaceDatabase.swift; sourceTree = "<group>"; };
+		0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
+		0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWorkSpaceViewModel.swift; sourceTree = "<group>"; };
 		0EF14B4828C3585800C10470 /* FBUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDatabase.swift; sourceTree = "<group>"; };
 		0EF14B4B28C358BE00C10470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0EF14B4D28C370EA00C10470 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
@@ -95,7 +101,7 @@
 				0EFC66F028C479FD0084B7A9 /* Home */,
 				0EFC66ED28C4784E0084B7A9 /* MainTabbar */,
 				0E91A16328C1D99F008CC238 /* Rogin */,
-				0EFC670328C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift */,
+				0EE6243428CEFB4C008B5EEF /* CreateNewWorkSpace */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -194,10 +200,20 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		0EE6243428CEFB4C008B5EEF /* CreateNewWorkSpace */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC670328C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift */,
+				0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */,
+			);
+			path = CreateNewWorkSpace;
+			sourceTree = "<group>";
+		};
 		0EF14B4728C3584100C10470 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				0EF14B4828C3585800C10470 /* FBUserDatabase.swift */,
+				0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -207,6 +223,7 @@
 			children = (
 				0EF14B4B28C358BE00C10470 /* User.swift */,
 				0EF14B4D28C370EA00C10470 /* UserInformation.swift */,
+				0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +424,7 @@
 				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
 				0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */,
 				0EFC66EC28C472A40084B7A9 /* UIAlertController+Extension.swift in Sources */,
+				0EE6243A28CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift in Sources */,
 				0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */,
 				0EFC670228C495DE0084B7A9 /* StackViewSpacer.swift in Sources */,
 				0E91A17228C2066C008CC238 /* SignInViewModel.swift in Sources */,
@@ -415,8 +433,10 @@
 				0EFC66F928C47A250084B7A9 /* GalleryViewController.swift in Sources */,
 				0EFC66FB28C47A2D0084B7A9 /* ProfileViewController.swift in Sources */,
 				0EFC670028C4947D0084B7A9 /* NoWorkSpaceView.swift in Sources */,
+				0EE6243628CEFB85008B5EEF /* FBWorkSpaceDatabase.swift in Sources */,
 				0E91A16B28C1E5CC008CC238 /* loginViewModel.swift in Sources */,
 				0E91A16828C1DA07008CC238 /* UIColor+Extension.swift in Sources */,
+				0EE6243828CEFC1E008B5EEF /* WorkSpace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

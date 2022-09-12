@@ -36,8 +36,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - binding
     private func bindingNoWorkSpaceView() {
-        guard let view = view as? NoWorkSpaceView else { return }
-        view.pushViewControllerHandler
+        noWorkSpaceView?.pushViewControllerHandler
             .sink { [weak self] vc in
                 self?.present(vc, animated: true)
             }.store(in: &subscriptions)

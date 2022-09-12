@@ -30,6 +30,10 @@ final class CreateNewWorkSpaceViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Properties
+    private let viewModel = CreateNewWorkSpaceViewModel()
+    private var subscriptions = Set<AnyCancellable>()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,31 @@ final class CreateNewWorkSpaceViewController: UIViewController {
         configureSubViews()
         setConstraintsOfCreateButton()
         setConstraintsOfWorkSpaceNameTextField()
+        
+        bindingViewProperties()
+        bindingViewModel()
+    }
+    
+    // MARK: - binding
+    private func bindingViewProperties() {
+        workSpaceNameTextField.textPublisher
+            .sink { [weak self] text in
+                guard let self = self,
+                      let text = text else { return }
+                self.viewModel.workSpaceName = text
+            }.store(in: &subscriptions)
+        
+        createButton.tapPublisher
+            .sink { [weak self] in
+                self?.viewModel.uploadNewWorkSpace()
+            }.store(in: &subscriptions)
+    }
+    
+    private func bindingViewModel() {
+        viewModel.uploadWorkSpaceDoneSubject
+            .sink { [weak self] in
+                self?.dismiss(animated: true)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI
