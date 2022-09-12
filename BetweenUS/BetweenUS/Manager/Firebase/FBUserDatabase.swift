@@ -43,4 +43,20 @@ final class FBUserDatabase {
             }
         }
     }
+    
+    func updateWorkSpace(workSpaceId: String) {
+        guard let user = UserInformation.shared.user else {
+            return
+        }
+        var workSpace = user.betweenUsWorkSpace
+        if workSpace != nil {
+            workSpace?.append(workSpaceId)
+        } else {
+            workSpace = [workSpaceId]
+        }
+        
+        UserInformation.shared.user = user
+        
+        ref.child("users").child(user.id).child("betweenUsWorkSpace").setValue(workSpace)
+    }
 }

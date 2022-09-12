@@ -44,7 +44,6 @@ final class SignUpUserInformationViewController: UIViewController {
         let textField = UITextField()
         textField.configure()
         textField.placeholder = "이름"
-        textField.borderStyle = .roundedRect
         
         return textField
     }()
@@ -53,7 +52,6 @@ final class SignUpUserInformationViewController: UIViewController {
         let textField = UITextField()
         textField.configure()
         textField.placeholder = "닉네임"
-        textField.borderStyle = .roundedRect
         
         return textField
     }()
@@ -61,7 +59,6 @@ final class SignUpUserInformationViewController: UIViewController {
     private lazy var birthdayTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "생년월일"
-        textField.borderStyle = .roundedRect
         
         return textField
     }()

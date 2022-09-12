@@ -13,5 +13,6 @@ extension UITextField {
         autocorrectionType = .no
         spellCheckingType = .no
         returnKeyType = .default
+        borderStyle = .roundedRect
     }
 }
