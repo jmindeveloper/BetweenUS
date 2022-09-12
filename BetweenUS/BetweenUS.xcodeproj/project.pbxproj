@@ -34,6 +34,7 @@
 		0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66FC28C47AE60084B7A9 /* UIViewController+Extension.swift */; };
 		0EFC670028C4947D0084B7A9 /* NoWorkSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */; };
 		0EFC670228C495DE0084B7A9 /* StackViewSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */; };
+		0EFC670428C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC670328C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift */; };
 		BAB0F7C36EA88E609BF63675 /* Pods_BetweenUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		0EFC66FC28C47AE60084B7A9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoWorkSpaceView.swift; sourceTree = "<group>"; };
 		0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewSpacer.swift; sourceTree = "<group>"; };
+		0EFC670328C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWorkSpaceViewController.swift; sourceTree = "<group>"; };
 		16A43404B2EAC6B65898EB9B /* Pods-BetweenUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.release.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.release.xcconfig"; sourceTree = "<group>"; };
 		95413D650EB38FAE054D1347 /* Pods-BetweenUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetweenUS.debug.xcconfig"; path = "Target Support Files/Pods-BetweenUS/Pods-BetweenUS.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAD6A997F4999732A199CE3 /* Pods_BetweenUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetweenUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				0EFC66F028C479FD0084B7A9 /* Home */,
 				0EFC66ED28C4784E0084B7A9 /* MainTabbar */,
 				0E91A16328C1D99F008CC238 /* Rogin */,
+				0EFC670328C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				0EF14B4C28C358BE00C10470 /* User.swift in Sources */,
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
+				0EFC670428C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift in Sources */,
 				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
 				0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */,
 				0EFC66EC28C472A40084B7A9 /* UIAlertController+Extension.swift in Sources */,

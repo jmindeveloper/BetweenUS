@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Combine
+import CombineCocoa
 
 final class NoWorkSpaceView: UIView {
     
@@ -48,12 +50,18 @@ final class NoWorkSpaceView: UIView {
         return stackView
     }()
     
+    // MARK: - Properties
+    let pushViewControllerHandler = PassthroughSubject<UIViewController, Never>()
+    private var subscriptions = Set<AnyCancellable>()
+    
     // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .viewBackground
         configureSubViews()
         setConstraintsOfNoWorkSpaceStackView()
+        
+        bindingViewProperties()
     }
     
     required init?(coder: NSCoder) {
@@ -64,6 +72,15 @@ final class NoWorkSpaceView: UIView {
     func setButtonsRound() {
         createNewWorkSpaceButton.layer.cornerRadius = createNewWorkSpaceButton.frame.height / 2
         searchWorkSpacebutton.layer.cornerRadius = searchWorkSpacebutton.frame.height / 2
+    }
+    
+    // MARK: - Binding
+    private func bindingViewProperties() {
+        createNewWorkSpaceButton.tapPublisher
+            .sink { [weak self] in
+                let createNewWorkSpaceVC = CreateNewWorkSpaceViewController()
+                self?.pushViewControllerHandler.send(createNewWorkSpaceVC)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI

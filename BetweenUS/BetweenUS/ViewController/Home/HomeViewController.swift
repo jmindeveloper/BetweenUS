@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 final class HomeViewController: UIViewController {
     
     private var noWorkSpaceView: NoWorkSpaceView?
     
+    // MARK: - LifeCycle
     override func loadView() {
         super.loadView()
         if UserInformation.shared.user?.betweenUsWorkSpace == nil {
@@ -21,11 +24,23 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindingNoWorkSpaceView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         noWorkSpaceView?.setButtonsRound()
+    }
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
+    // MARK: - binding
+    private func bindingNoWorkSpaceView() {
+        guard let view = view as? NoWorkSpaceView else { return }
+        view.pushViewControllerHandler
+            .sink { [weak self] vc in
+                self?.present(vc, animated: true)
+            }.store(in: &subscriptions)
     }
 }
 
