@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Combine
 import FirebaseDatabase
 
 final class FBWorkSpaceDatabase {
     private let ref = Database.database().reference()
+    let getWorkSpaceSubject = PassthroughSubject<WorkSpace, Never>()
     
     func saveNewWorkSpace(workSpace: WorkSpace, createUserId: String, completion: @escaping (() -> Void)) {
         ref.child("workSpace").child(workSpace.id).setValue(
@@ -22,15 +24,15 @@ final class FBWorkSpaceDatabase {
             ]
         ) { error, _ in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             completion()
         }
     }
     
-    func getWorkSpace(workSpaceId: String) {
-        ref.child("workSpace").child(workSpaceId).observeSingleEvent(of: .value) { snapshot in
+    func getWorkSpace(getWorkSpaceId: String) {
+        ref.child("workSpace").child(getWorkSpaceId).observeSingleEvent(of: .value) { [weak self] snapshot in
             guard let snapshotData = snapshot.value as? [String: Any] else {
                 return
             }
@@ -38,23 +40,29 @@ final class FBWorkSpaceDatabase {
                 let data = try JSONSerialization.data(withJSONObject: snapshotData, options: [])
                 let decoder = JSONDecoder()
                 let workSpace = try decoder.decode(WorkSpace.self, from: data)
-                print(workSpace)
+                self?.getWorkSpaceSubject.send(workSpace)
             } catch let error {
                 print(error.localizedDescription )
             }
         }
     }
     
-    func searchWorkSpace(workSpaceName: String) {
+    func searchWorkSpace(searchWorkSpaceName: String) {
         ref.child("workSpace").observeSingleEvent(of: .value) { [weak self] snapshot in
             let values = snapshot.value
             let dic = values as! [String: [String: Any]]
             for index in dic {
                 if let workSpaceName = (index.value["name"] as? String) {
-                    if workSpaceName.localizedStandardContains(workSpaceName) {
+                    if workSpaceName.contains(searchWorkSpaceName) {
                         if let id = index.value["id"] as? String {
-                            self?.getWorkSpace(workSpaceId: id)
+                            self?.getWorkSpace(getWorkSpaceId: id)
                         }
+                    }
+                }
+                
+                if let workSpaceId = (index.value["id"] as? String) {
+                    if workSpaceId.contains(searchWorkSpaceName) {
+                        self?.getWorkSpace(getWorkSpaceId: workSpaceId)
                     }
                 }
             }
