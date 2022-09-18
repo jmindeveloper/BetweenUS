@@ -67,7 +67,9 @@ final class SearchWorkSpaceViewController: UIViewController {
     private func bindingViewProperties() {
         searchBar.searchTextField.textPublisher
             .sink { [weak self] searchText in
-                self?.viewModel.searchWorkSpace = searchText ?? ""
+                if searchText != self?.viewModel.searchWorkSpace {
+                    self?.viewModel.searchWorkSpace = searchText ?? ""
+                }
             }.store(in: &subscriptions)
     }
     
@@ -109,11 +111,23 @@ extension SearchWorkSpaceViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSpaceCollectionViewCell.identifier, for: indexPath) as? WorkSpaceCollectionViewCell else {
             return UICollectionViewCell()
         }
+        let workSpace = viewModel.searchWorkSpaces[indexPath.item]
+        cell.configureCell(workSpace: workSpace)
         
         return cell
     }
 }
 
 extension SearchWorkSpaceViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let workSpace = viewModel.searchWorkSpaces[indexPath.item]
+        let alert = UIAlertController
+            .createAlert(message: "\(workSpace.name)에 가입하시겠습니까?")
+            .addAction(title: "확인") {
+                print("가입하기")
+            }
+            .addAction(title: "취소", style: .cancel)
+        
+        present(alert, animated: true)
+    }
 }

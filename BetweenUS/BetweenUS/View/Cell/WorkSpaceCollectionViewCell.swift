@@ -15,8 +15,8 @@ final class WorkSpaceCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     private let workSpaceNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "안녕하세요 김지민입니다 좀 돼라"
         label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         
         return label
     }()
