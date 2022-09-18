@@ -5,10 +5,12 @@
 //  Created by J_Min on 2022/09/12.
 //
 
-import Foundation
+import UIKit
 
 struct WorkSpace {
     let id: String
-    let name: String
-    let userIds: [String]
+    var name: String
+    var userIds: [String]
+    var imageUrl: String?
+    var passworld: String?
 }

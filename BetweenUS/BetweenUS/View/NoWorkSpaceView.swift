@@ -81,6 +81,12 @@ final class NoWorkSpaceView: UIView {
                 let createNewWorkSpaceVC = CreateNewWorkSpaceViewController()
                 self?.pushViewControllerHandler.send(createNewWorkSpaceVC)
             }.store(in: &subscriptions)
+        
+        searchWorkSpacebutton.tapPublisher
+            .sink { [weak self] in
+                let searchWorkSpaceVC = SearchWorkSpaceViewController()
+                self?.pushViewControllerHandler.send(searchWorkSpaceVC)
+            }.store(in: &subscriptions)
     }
     
     // MARK: - UI

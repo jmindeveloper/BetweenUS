@@ -17,7 +17,8 @@ final class FBWorkSpaceDatabase {
                 "id": workSpace.id,
                 "name": workSpace.name,
                 "users": workSpace.userIds,
-                "createUserId": createUserId
+                "admin": createUserId,
+                "passworld": workSpace.passworld as Any
             ]
         ) { error, _ in
             if error != nil {

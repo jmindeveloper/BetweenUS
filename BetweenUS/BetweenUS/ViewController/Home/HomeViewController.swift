@@ -16,10 +16,10 @@ final class HomeViewController: UIViewController {
     // MARK: - LifeCycle
     override func loadView() {
         super.loadView()
-        if UserInformation.shared.user?.betweenUsWorkSpace == nil {
+//        if UserInformation.shared.user?.betweenUsWorkSpace == nil {
             view = NoWorkSpaceView()
             noWorkSpaceView = view as? NoWorkSpaceView
-        }
+//        }
     }
     
     override func viewDidLoad() {

@@ -18,8 +18,7 @@ final class FBUserDatabase {
                 "email": user.email,
                 "name": user.name,
                 "nickName": user.nickName,
-                "birthday": user.birthday,
-                "betweenUsWorkSpace": []
+                "birthday": user.birthday
             ]
         )
         
