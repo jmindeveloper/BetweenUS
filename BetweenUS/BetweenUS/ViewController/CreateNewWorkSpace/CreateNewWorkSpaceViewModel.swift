@@ -24,6 +24,7 @@ final class CreateNewWorkSpaceViewModel {
         guard let id = UserInformation.shared.user?.id else { return nil }
         let workSpace = WorkSpace(
             id: UUID().uuidString,
+            admin: UserInformation.shared.user?.id ?? "",
             name: workSpaceName,
             userIds: [id]
         )

@@ -29,14 +29,32 @@ final class FBWorkSpaceDatabase {
         }
     }
     
-    func searchWorkSpace(workSpace: String) {
-        ref.child("workSpace").observeSingleEvent(of: .value) { snapshot in
+    func getWorkSpace(workSpaceId: String) {
+        ref.child("workSpace").child(workSpaceId).observeSingleEvent(of: .value) { snapshot in
+            guard let snapshotData = snapshot.value as? [String: Any] else {
+                return
+            }
+            do {
+                let data = try JSONSerialization.data(withJSONObject: snapshotData, options: [])
+                let decoder = JSONDecoder()
+                let workSpace = try decoder.decode(WorkSpace.self, from: data)
+                print(workSpace)
+            } catch let error {
+                print(error.localizedDescription )
+            }
+        }
+    }
+    
+    func searchWorkSpace(workSpaceName: String) {
+        ref.child("workSpace").observeSingleEvent(of: .value) { [weak self] snapshot in
             let values = snapshot.value
             let dic = values as! [String: [String: Any]]
             for index in dic {
                 if let workSpaceName = (index.value["name"] as? String) {
-                    if workSpaceName.localizedStandardContains(workSpace) {
-                        print(index.value)
+                    if workSpaceName.localizedStandardContains(workSpaceName) {
+                        if let id = index.value["id"] as? String {
+                            self?.getWorkSpace(workSpaceId: id)
+                        }
                     }
                 }
             }

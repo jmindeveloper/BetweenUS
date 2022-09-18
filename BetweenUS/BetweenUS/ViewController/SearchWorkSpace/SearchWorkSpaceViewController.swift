@@ -46,6 +46,7 @@ final class SearchWorkSpaceViewController: UIViewController {
     
     // MARK: - Properteis
     private let viewModel = SearchWorkSpaceViewModel()
+    private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -54,8 +55,19 @@ final class SearchWorkSpaceViewController: UIViewController {
         configureSubViews()
         setConstraintsNavigationBar()
         setConstraintsOfSearchResultCollectionView()
+        
+        bindingViewProperties()
     }
     
+    // MARK: - Binding
+    private func bindingViewProperties() {
+        searchBar.searchTextField.textPublisher
+            .sink { [weak self] searchText in
+                self?.viewModel.searchWorkSpace = searchText ?? ""
+            }.store(in: &subscriptions)
+    }
+    
+    // MARK: - UI
     private func configureSubViews() {
         [navigationBar, searchResultCollectionView].forEach {
             view.addSubview($0)

@@ -7,10 +7,17 @@
 
 import UIKit
 
-struct WorkSpace {
+struct WorkSpace: Codable {
     let id: String
+    let admin: String
     var name: String
     var userIds: [String]
     var imageUrl: String?
     var passworld: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, admin, name, passworld, imageUrl
+        case userIds = "users"
+    }
 }
+
