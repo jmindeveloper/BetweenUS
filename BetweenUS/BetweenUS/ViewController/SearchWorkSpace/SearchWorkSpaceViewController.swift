@@ -18,7 +18,7 @@ final class SearchWorkSpaceViewController: UIViewController {
         let navigationBarItem = UINavigationItem()
         navigationBarItem.titleView = searchBar
         navigationBar.setItems([navigationBarItem], animated: true)
-         
+          
         return navigationBar
     }()
     
