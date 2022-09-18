@@ -12,11 +12,15 @@ final class SearchWorkSpaceViewModel {
     
     private var subscriptions = Set<AnyCancellable>()
     private let workSpaceDb = FBWorkSpaceDatabase()
-    var searchWorkSpaces = [WorkSpace]()
+    var searchWorkSpaces = [WorkSpace]() {
+        didSet {
+            doneSearchWorkSpaceSubject.send()
+        }
+    }
     @Published var searchWorkSpace: String = ""
+    let doneSearchWorkSpaceSubject = PassthroughSubject<Void, Never>()
     
     init() {
-//        workSpaceDb.searchWorkSpace(workSpace: "iOS 연습방")
         bindingSearchWorkSpaceText()
         bindingWorkSpaceDb()
     }
@@ -26,15 +30,15 @@ final class SearchWorkSpaceViewModel {
         $searchWorkSpace
             .debounce(for: 1, scheduler: DispatchQueue.main)
             .sink { [weak self] text in
+                self?.searchWorkSpaces = []
                 self?.workSpaceDb.searchWorkSpace(searchWorkSpaceName: text)
             }.store(in: &subscriptions)
     }
     
     private func bindingWorkSpaceDb() {
         workSpaceDb.getWorkSpaceSubject
-            .collect(.byTime(DispatchQueue.main, 1))
             .sink { [weak self] workSpaces in
-                self?.searchWorkSpaces = workSpaces
+                self?.searchWorkSpaces.append(workSpaces)
             }.store(in: &subscriptions)
     }
 }

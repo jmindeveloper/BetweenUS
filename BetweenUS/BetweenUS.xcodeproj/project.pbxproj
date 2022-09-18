@@ -23,6 +23,8 @@
 		0EB8FCED28C0CF9200D86240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */; };
 		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
 		0EC485FB28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC485FA28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift */; };
+		0EC485FE28D70B1700C69254 /* WorkSpaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC485FD28D70B1700C69254 /* WorkSpaceCollectionViewCell.swift */; };
+		0EC4860028D70E8600C69254 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC485FF28D70E8600C69254 /* UICollectionView+Extension.swift */; };
 		0EE6243628CEFB85008B5EEF /* FBWorkSpaceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */; };
 		0EE6243828CEFC1E008B5EEF /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */; };
 		0EE6243A28CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */; };
@@ -62,6 +64,8 @@
 		0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0EC485FA28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachWorkSpaceViewModel.swift; sourceTree = "<group>"; };
+		0EC485FD28D70B1700C69254 /* WorkSpaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		0EC485FF28D70E8600C69254 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBWorkSpaceDatabase.swift; sourceTree = "<group>"; };
 		0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
 		0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWorkSpaceViewModel.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				0E4A84D028C33AD800BA72B0 /* String+Extension.swift */,
 				0EFC66EB28C472A40084B7A9 /* UIAlertController+Extension.swift */,
 				0EFC66FC28C47AE60084B7A9 /* UIViewController+Extension.swift */,
+				0EC485FF28D70E8600C69254 /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -203,6 +208,14 @@
 				0EB8FCE528C0CE3B00D86240 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		0EC485FC28D70B0C00C69254 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EC485FD28D70B1700C69254 /* WorkSpaceCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0EE6243428CEFB4C008B5EEF /* CreateNewWorkSpace */ = {
@@ -285,6 +298,7 @@
 		0EFC66FE28C4943E0084B7A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0EC485FC28D70B0C00C69254 /* Cell */,
 				0EFC66FF28C4947D0084B7A9 /* NoWorkSpaceView.swift */,
 				0EFC670128C495DE0084B7A9 /* StackViewSpacer.swift */,
 			);
@@ -429,6 +443,7 @@
 				0EFC66F728C47A1E0084B7A9 /* DayViewController.swift in Sources */,
 				0EB8FCD828C0CE3A00D86240 /* AppDelegate.swift in Sources */,
 				0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */,
+				0EC485FE28D70B1700C69254 /* WorkSpaceCollectionViewCell.swift in Sources */,
 				0EFC66F528C47A170084B7A9 /* HomeViewController.swift in Sources */,
 				0E4A84D128C33AD800BA72B0 /* String+Extension.swift in Sources */,
 				0EC485FB28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift in Sources */,
@@ -438,6 +453,7 @@
 				0EFC670428C4AC480084B7A9 /* CreateNewWorkSpaceViewController.swift in Sources */,
 				0EA03F0628C223B200F6BE75 /* UITextField+Extension.swift in Sources */,
 				0EFC66FD28C47AE60084B7A9 /* UIViewController+Extension.swift in Sources */,
+				0EC4860028D70E8600C69254 /* UICollectionView+Extension.swift in Sources */,
 				0EFC66EC28C472A40084B7A9 /* UIAlertController+Extension.swift in Sources */,
 				0EE6243A28CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift in Sources */,
 				0EF14B4E28C370EA00C10470 /* UserInformation.swift in Sources */,

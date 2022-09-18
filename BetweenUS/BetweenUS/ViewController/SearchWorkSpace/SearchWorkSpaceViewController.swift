@@ -37,9 +37,12 @@ final class SearchWorkSpaceViewController: UIViewController {
     }()
     
     private lazy var searchResultCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionView.singleTableLayout(widthOffset: 20)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .viewBackground
+        collectionView.register(WorkSpaceCollectionViewCell.self, forCellWithReuseIdentifier: WorkSpaceCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         return collectionView
     }()
@@ -57,6 +60,7 @@ final class SearchWorkSpaceViewController: UIViewController {
         setConstraintsOfSearchResultCollectionView()
         
         bindingViewProperties()
+        bindingViewModel()
     }
     
     // MARK: - Binding
@@ -64,6 +68,13 @@ final class SearchWorkSpaceViewController: UIViewController {
         searchBar.searchTextField.textPublisher
             .sink { [weak self] searchText in
                 self?.viewModel.searchWorkSpace = searchText ?? ""
+            }.store(in: &subscriptions)
+    }
+    
+    private func bindingViewModel() {
+        viewModel.doneSearchWorkSpaceSubject
+            .sink { [weak self] in
+                self?.searchResultCollectionView.reloadData()
             }.store(in: &subscriptions)
     }
     
@@ -87,4 +98,22 @@ final class SearchWorkSpaceViewController: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
+}
+
+extension SearchWorkSpaceViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.searchWorkSpaces.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSpaceCollectionViewCell.identifier, for: indexPath) as? WorkSpaceCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        return cell
+    }
+}
+
+extension SearchWorkSpaceViewController: UICollectionViewDelegate {
+    
 }
