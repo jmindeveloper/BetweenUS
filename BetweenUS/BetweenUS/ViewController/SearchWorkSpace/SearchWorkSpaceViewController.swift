@@ -25,7 +25,7 @@ final class SearchWorkSpaceViewController: UIViewController {
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchTextField.leftView = nil
-        searchBar.placeholder = "워크스페이스 이름 혹은 아이디를 검색하세요"
+        searchBar.placeholder = "Search for workspace name or id..."
         searchBar.autocapitalizationType = .none
         searchBar.autocorrectionType = .no
         searchBar.spellCheckingType = .no
@@ -44,6 +44,10 @@ final class SearchWorkSpaceViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Properteis
+    private let viewModel = SearchWorkSpaceViewModel()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .viewBackground

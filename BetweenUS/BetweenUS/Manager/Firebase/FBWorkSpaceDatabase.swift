@@ -28,4 +28,18 @@ final class FBWorkSpaceDatabase {
             completion()
         }
     }
+    
+    func searchWorkSpace(workSpace: String) {
+        ref.child("workSpace").observeSingleEvent(of: .value) { snapshot in
+            let values = snapshot.value
+            let dic = values as! [String: [String: Any]]
+            for index in dic {
+                if let workSpaceName = (index.value["name"] as? String) {
+                    if workSpaceName.localizedStandardContains(workSpace) {
+                        print(index.value)
+                    }
+                }
+            }
+        }
+    }
 }

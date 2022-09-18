@@ -22,6 +22,7 @@
 		0EB8FCE428C0CE3B00D86240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCE228C0CE3B00D86240 /* LaunchScreen.storyboard */; };
 		0EB8FCED28C0CF9200D86240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */; };
 		0EB8FCEF28C0D1C900D86240 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */; };
+		0EC485FB28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC485FA28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift */; };
 		0EE6243628CEFB85008B5EEF /* FBWorkSpaceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */; };
 		0EE6243828CEFC1E008B5EEF /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */; };
 		0EE6243A28CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */; };
@@ -60,6 +61,7 @@
 		0EB8FCE528C0CE3B00D86240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB8FCEC28C0CF9200D86240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EB8FCEE28C0D1C900D86240 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0EC485FA28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachWorkSpaceViewModel.swift; sourceTree = "<group>"; };
 		0EE6243528CEFB85008B5EEF /* FBWorkSpaceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBWorkSpaceDatabase.swift; sourceTree = "<group>"; };
 		0EE6243728CEFC1E008B5EEF /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
 		0EE6243928CEFE20008B5EEF /* CreateNewWorkSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWorkSpaceViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				0EE6243B28CF10C1008B5EEF /* SearchWorkSpaceViewController.swift */,
+				0EC485FA28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift */,
 			);
 			path = SearchWorkSpace;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				0E91A17028C1F4C7008CC238 /* SignUpViewModel.swift in Sources */,
 				0EFC66F528C47A170084B7A9 /* HomeViewController.swift in Sources */,
 				0E4A84D128C33AD800BA72B0 /* String+Extension.swift in Sources */,
+				0EC485FB28D6F47A00C69254 /* SerachWorkSpaceViewModel.swift in Sources */,
 				0EF14B4C28C358BE00C10470 /* User.swift in Sources */,
 				0E91A16528C1D9CB008CC238 /* SignUpViewController.swift in Sources */,
 				0EB8FCDA28C0CE3A00D86240 /* SceneDelegate.swift in Sources */,
